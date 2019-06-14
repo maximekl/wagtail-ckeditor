@@ -1,13 +1,13 @@
 from django.templatetags.static import static
 from django.utils.html import format_html
-from wagtail.wagtailcore import hooks
-from wagtail.wagtailcore.whitelist import allow_without_attributes, check_url, attribute_rule
-from wagtail_ckeditor import settings
+from wagtail.core import hooks
+from wagtail.core.whitelist import allow_without_attributes, check_url, attribute_rule
+from wagtail2_ckeditor import settings
 
 
 @hooks.register('insert_editor_js')
 def ckeditorjs():
-    return format_html('<script src="{src}"></script>', src=static("wagtail_ckeditor/ckeditor/ckeditor.js"))
+    return format_html('<script src="{src}"></script>', src=static("wagtail2_ckeditor/ckeditor/ckeditor.js"))
 
 
 @hooks.register('construct_whitelister_element_rules')
